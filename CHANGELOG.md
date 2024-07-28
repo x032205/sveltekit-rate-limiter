@@ -5,11 +5,17 @@ Headlines: Added, Changed, Deprecated, Removed, Fixed, Security
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.2] - 2024-07-15
+## [0.5.3] - 2024-07-15
 
 ### Added
 
 - Some additional rate units: `2m | 5m | 10m | 45m`
+
+## [0.5.2] - 2024-07-27
+
+### Added
+
+- Support for cloudflare using `cf-connecting-ip` header
 
 ## [0.5.1] - 2024-03-18
 
