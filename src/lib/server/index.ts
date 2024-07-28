@@ -54,7 +54,7 @@ class IPRateLimiter implements RateLimiterPlugin {
   }
 
   async hash(event: RequestEvent) {
-    return event.getClientAddress();
+    return event.request.headers.get("cf-connecting-ip") || event.getClientAddress();
   }
 }
 
@@ -68,7 +68,7 @@ class IPUserAgentRateLimiter implements RateLimiterPlugin {
   async hash(event: RequestEvent) {
     const ua = event.request.headers.get('user-agent');
     if (!ua) return false;
-    return event.getClientAddress() + ua;
+    return (event.request.headers.get("cf-connecting-ip") || event.getClientAddress()) + ua;
   }
 }
 
